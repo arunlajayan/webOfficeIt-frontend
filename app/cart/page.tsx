@@ -17,7 +17,8 @@ const CartPage: React.FC = () => {
     <CardContent>
       {
         cart.map((course) => (
-          <Box className="flex flex-col">
+          
+          <Box key={course._id} className="flex flex-col">
       <Typography variant="h5" component="h1" textAlign="center">
         {course.title}
       </Typography>
