@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
- import { Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from './Components/Header';
 import ThemeRegistry from './Theme';
-import { CartProvider } from '@/store/context';
- const inter = Inter({ subsets: ['latin'] });
+import { CartProvider } from '@/app/context';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'course collection',
@@ -20,9 +21,10 @@ export default function RootLayout({
     <html>
       <body className={inter.className}>
         <ThemeRegistry>
+        <CartProvider> 
           <Header />
-          <CartProvider>
-          <main className="mt-[4.52rem]">{children}</main>
+         
+            <main className="mt-[4.52rem]">{children}</main>
           </CartProvider>
         </ThemeRegistry>
       </body>

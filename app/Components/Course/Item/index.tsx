@@ -13,17 +13,20 @@ import React, { useState } from 'react';
 import { LoadImage } from '@/app/Types/Image..type';
 import CustomModal from '../../CustomModal';
 import { updateCourse } from '@/app/Data/Course';
-import { useCart } from '@/store/context';
+import { useCart } from '@/app/context';
 
 interface ItemProps {
   course: CourseState;
 }
 const Item: React.FC<ItemProps> = ({ course }) => {
   const [open, setOpen] = useState(false);
-  const [digit, setDigit] = useState(0);
+ 
   
-  const { count, addToCart } = useCart();
+  const { addToCart } = useCart();
 
+  const handleAddToCart = (product:any) => {
+    addToCart(product);
+  };
 
   const handleOpen = () => {
     setOpen(true);
@@ -78,7 +81,7 @@ const Item: React.FC<ItemProps> = ({ course }) => {
             {course.description}
           </Typography>
           <Button
-            onClick={addToCart}
+            onClick={handleAddToCart}
             variant="outlined"
             size="small"
             color="secondary"
