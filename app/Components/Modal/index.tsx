@@ -18,7 +18,7 @@ function Modal() {
         const description =formData.get('description')
         createCourse({ "title": title, "fee": fee, "description": description }).then((res: any) => {  
                 console.log(res)
-                router.push('/');
+                window.location.reload()
             
           });
         
