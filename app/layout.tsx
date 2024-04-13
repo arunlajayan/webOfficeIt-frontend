@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from './Components/Header';
 import ThemeRegistry from './Theme';
+import { CartProvider } from '@/store/context';
  const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -20,7 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeRegistry>
           <Header />
+          <CartProvider>
           <main className="mt-[4.52rem]">{children}</main>
+          </CartProvider>
         </ThemeRegistry>
       </body>
     </html>

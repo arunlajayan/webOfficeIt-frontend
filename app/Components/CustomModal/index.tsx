@@ -30,17 +30,15 @@ const CustomModal: React.FC<CustomModalProps> = ({
       description: updatedDescription
     }
     updateCourse(id,updateData)
-    console.log('Updated Title:', updatedTitle);
-    console.log('Updated Fee:', updatedFee);
-    console.log('Updated Description:', updatedDescription);
+   
 
-    handleClose(); // Close the modal
+    handleClose(); 
   };
 
   return (
     <Modal
       open={open}
-      onClose={handleCloseModal} // Use the updated handleCloseModal function here
+      onClose={handleCloseModal} 
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >

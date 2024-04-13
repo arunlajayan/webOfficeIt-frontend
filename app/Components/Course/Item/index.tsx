@@ -13,13 +13,17 @@ import React, { useState } from 'react';
 import { LoadImage } from '@/app/Types/Image..type';
 import CustomModal from '../../CustomModal';
 import { updateCourse } from '@/app/Data/Course';
+import { useCart } from '@/store/context';
 
 interface ItemProps {
   course: CourseState;
 }
-
 const Item: React.FC<ItemProps> = ({ course }) => {
   const [open, setOpen] = useState(false);
+  const [digit, setDigit] = useState(0);
+  
+  const { count, addToCart } = useCart();
+
 
   const handleOpen = () => {
     setOpen(true);
@@ -28,6 +32,7 @@ const Item: React.FC<ItemProps> = ({ course }) => {
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <Card>
       <Box className="md:h-50 h-60 relative rounded" component="section">
@@ -72,10 +77,20 @@ const Item: React.FC<ItemProps> = ({ course }) => {
           <Typography variant="h6" component="p">
             {course.description}
           </Typography>
+          <Button
+            onClick={addToCart}
+            variant="outlined"
+            size="small"
+            color="secondary"
+            sx={{ width: "5rem", position: "absolute" }}
+          >
+            Add To Cart{' '}
+          </Button>
         </Box>
       </CardContent>
     </Card>
   );
 };
+
 
 export default Item;

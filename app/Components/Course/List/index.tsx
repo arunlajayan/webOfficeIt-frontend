@@ -5,13 +5,13 @@ import Item from '../Item';
 import { getUser } from '@/app/Data/Course';
 import { Typography } from '@mui/material';
 
-// Types
+  
 interface ListProps {
   courses: CourseState[];
 }
-// Component
+ 
 const List: React.FC = () => {
-  // Create Course Items
+ 
   const [courses, setCourses] = useState<CourseState[]>([]);
   const [loading, setLoading] = useState(true)
   useEffect(() => {
@@ -23,7 +23,7 @@ const List: React.FC = () => {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching course data:", error);
-        // Handle error
+   
       }
     };
 

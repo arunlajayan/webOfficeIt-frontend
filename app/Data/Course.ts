@@ -7,7 +7,7 @@ interface Response {
 }
 export const getUser = async () => {
   try {
-    const response = await fetch("http://localhost:3002/api/v1/course/all", {
+    const response = await fetch("https://udemy-clone-backend-0zio.onrender.com/api/v1/course/all", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -29,8 +29,8 @@ export const getUser = async () => {
 
 export const updateCourse = async (courseId: string, data: Partial<CourseState>) => {
   try {
-    const response = await fetch(`http://localhost:3002/api/v1/course/${courseId}`, {
-      method: "PATCH", // Use PATCH method for updating
+    const response = await fetch(`https://udemy-clone-backend-0zio.onrender.com/api/v1/course/${courseId}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },

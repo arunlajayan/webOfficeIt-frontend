@@ -1,4 +1,4 @@
-// app/ThemeRegistry.tsx
+
 'use client';
 import React from 'react';
 import createCache from '@emotion/cache';
@@ -21,7 +21,7 @@ const theme = createTheme({
   },
 });
 
-// This implementation is from emotion-js
+
 export default function ThemeRegistry(props: any) {
   const { children } = props;
 

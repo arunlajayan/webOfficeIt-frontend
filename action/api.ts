@@ -6,7 +6,7 @@ interface Response {
   }
 export const createCourse = async (data: any) => {
     try {
-      const response = await fetch("http://localhost:3002/api/v1/course/create", {
+      const response = await fetch("https://udemy-clone-backend-0zio.onrender.com/api/v1/course/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -18,9 +18,8 @@ export const createCourse = async (data: any) => {
         throw new Error("Failed to fetch");
       }
   
-      const responseData: Response = await response.json();
-      // console.log(responseData);
-      localStorage.setItem("token", responseData.token)
+      return await response.json();
+   
       
     } catch (error) {
       console.error("Error:", error);

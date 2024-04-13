@@ -16,11 +16,13 @@ function Modal() {
       const title =  formData.get('title')
         const fee = formData.get('fee')
         const description =formData.get('description')
-        createCourse({ "title": title, "fee": fee,"description":description }).then((res:any) => {
-            console.log(res)
-        })
-        window.location.reload()
-        // console.log({ "title": title, "fee": fee,"description":description })
+        createCourse({ "title": title, "fee": fee, "description": description }).then((res: any) => {  
+                console.log(res)
+                router.push('/');
+            
+          });
+        
+   
     }
     const [state, formAction] = useFormState<any>(
         sellYourItemAction as any,
