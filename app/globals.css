@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-modal{
+    background: transparent;
+    color: #ff9902;
+    text-decoration: none;
+    padding: 7px 26px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 900;
+    border: 1px solid #ff9902;
+    letter-spacing: 0.7px;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    margin-top: -12px;
+  }
