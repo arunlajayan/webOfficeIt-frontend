@@ -34,6 +34,7 @@ const Item: React.FC<ItemProps> = ({ course }) => {
 
   const handleClose = () => {
     setOpen(false);
+    window.location.reload()
   };
 
   return (

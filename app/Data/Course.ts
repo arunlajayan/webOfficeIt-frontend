@@ -42,7 +42,7 @@ export const updateCourse = async (courseId: string, data: Partial<CourseState>)
     }
 
     const responseData: Response = await response.json();
-    console.log("Course updated successfully:", responseData);
+   
   } catch (error) {
     console.error("Error updating course:", error);
   }

@@ -29,10 +29,13 @@ const CustomModal: React.FC<CustomModalProps> = ({
       fee: updatedFee,
       description: updatedDescription
     }
-    updateCourse(id,updateData)
+    updateCourse(id,updateData).then((res: any) => {  
+      handleClose(); 
+  
+});
    
 
-    handleClose(); 
+    
   };
 
   return (
@@ -76,7 +79,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
             setUpdatedDescription(e.target.value);
           }}
         />
-        <Button variant="outlined" onClick={handleCloseModal}>Close</Button>
+        <Button variant="outlined" onClick={handleCloseModal}>EDIT</Button>
       </div>
     </Modal>
   );
