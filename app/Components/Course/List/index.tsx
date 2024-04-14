@@ -2,7 +2,7 @@
 import { CourseState } from '@/app/Types/Course.type';
 import React, { useEffect, useState } from 'react';
 import Item from '../Item';
-import { getUser } from '@/app/Data/Course';
+import { getCourse } from '@/app/Data/Course';
 import { Typography } from '@mui/material';
 
   
@@ -18,7 +18,7 @@ const List: React.FC = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const userData:any = await getUser();
+        const userData:any = await getCourse();
         setCourses(userData);
         setLoading(false);
       } catch (error) {

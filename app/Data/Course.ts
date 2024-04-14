@@ -5,7 +5,7 @@ interface Response {
   success: boolean;
 
 }
-export const getUser = async () => {
+export const getCourse = async () => {
   try {
     const response = await fetch("https://udemy-clone-backend-0zio.onrender.com/api/v1/course/all", {
       method: "GET",
